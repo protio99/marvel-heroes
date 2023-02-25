@@ -20,9 +20,10 @@ export default class MarvelService {
       const response = await axios.get(`${baseEndPoint}${charactersEndpoint}`, {
         params,
       });
-      console.log("Get characters", response);
+      // console.log("Get characters", response);
+      return response;
     } catch (error) {
-      console.log(error);
+      console.log("ddddddddd", error);
     }
   }
 
