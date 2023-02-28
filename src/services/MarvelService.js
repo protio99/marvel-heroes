@@ -12,46 +12,25 @@ let params = {
   ts: timeStamp,
   apikey: publicKey,
   hash: hash,
+  limit: 5,
 };
 
-export default class MarvelService {
-  async GetCharacters() {
-    try {
-      const response = await axios.get(`${baseEndPoint}${charactersEndpoint}`, {
-        params,
-      });
-      // console.log("Get characters", response);
-      return response;
-    } catch (error) {
-      console.log("ddddddddd", error);
-    }
+export class MarvelService {
+  GetCharacters() {
+    return axios.get(`${baseEndPoint}${charactersEndpoint}`, {
+      params,
+    });
   }
 
-  async GetCharacter(id) {
-    try {
-      const response = await axios.get(
-        `${baseEndPoint}${charactersEndpoint}/${id}`,
-        {
-          params,
-        }
-      );
-      console.log("Get characters by id", response);
-    } catch (error) {
-      console.log(error);
-    }
+  GetCharacter(id) {
+    return axios.get(`${baseEndPoint}${charactersEndpoint}/${id}`, {
+      params,
+    });
   }
   //1010870
-  async GetComicsByCharacterId(id) {
-    try {
-      const response = await axios.get(
-        `${baseEndPoint}${charactersEndpoint}/${id}/comics`,
-        {
-          params,
-        }
-      );
-      console.log("Get comics", response);
-    } catch (error) {
-      console.log(error);
-    }
+  GetComicsByCharacterId(id) {
+    return axios.get(`${baseEndPoint}${charactersEndpoint}/${id}/comics`, {
+      params,
+    });
   }
 }

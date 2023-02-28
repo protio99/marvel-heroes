@@ -1,0 +1,12 @@
+/* BEM Bloque-elemento-modificador */
+
+.hero-card {
+  background-color: antiquewhite;
+  margin: 1rem;
+  width: 45%;
+}
+
+.hero-card__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
