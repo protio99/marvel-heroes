@@ -4,11 +4,17 @@ import "./heroCard.css";
 export default function HeroCard({ character }) {
   return (
     <div id={character.id} className="hero-card">
-      <img></img>
-      <div>
-        <h2 className="hero-card__name">{character.name}</h2>
-        <p className="hero-card__description">{character.description}</p>
-        <button>View more</button>
+      <div className="hero-card__info">
+        <div className="hero-card__info__img">
+          <img
+            src={`${character.thumbnail.path}/portrait_incredible.jpg`}
+          ></img>
+        </div>
+        <div className="hero-card__info__data">
+          <h2 className="hero-card__name">{character.name}</h2>
+          <p className="hero-card__description">{character.description}</p>
+          <button>View more</button>
+        </div>
       </div>
       <div className="">
         <h3>Related Comics</h3>

@@ -13,15 +13,6 @@ function App() {
     setCharacters(response.data.data.results);
   }
   useEffect(() => {
-    // _marvelService
-    //   .GetCharacters()
-    //   .then((response) => {
-    //     setCharacters(response.data.data.results);
-    //     console.log("---------------", response.data.data.results);
-    //   })
-    //   .catch((e) => {
-    //     console.log("Error", e);
-    //   });
     getCharacters();
   }, []);
 

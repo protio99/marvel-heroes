@@ -1,12 +1,29 @@
-/* BEM Bloque-elemento-modificador */
+/* BEM Bloque__elemento--modificador */
 
 .hero-card {
   background-color: antiquewhite;
   margin: 1rem;
   width: 45%;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-card__name {
   font-size: 1.2rem;
   font-weight: bold;
+}
+.hero-card__info {
+  display: flex;
+  flex-direction: row;
+}
+.hero-card__info__img {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  background-color: brown;
+  overflow: hidden;
+}
+
+.hero-card__info__data {
+  width: 50%;
 }
