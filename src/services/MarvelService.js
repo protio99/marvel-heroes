@@ -12,7 +12,7 @@ let params = {
   ts: timeStamp,
   apikey: publicKey,
   hash: hash,
-  limit: 5,
+  limit: 10,
 };
 
 export class MarvelService {

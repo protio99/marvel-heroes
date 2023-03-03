@@ -1,11 +1,13 @@
 /* BEM Bloque__elemento--modificador */
 
 .hero-card {
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
   margin: 1rem;
-  width: 45%;
+  width: 25rem;
+  height: 19rem;
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
 }
 
 .hero-card__name {
@@ -15,15 +17,86 @@
 .hero-card__info {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  height: 60%;
 }
-.hero-card__info__img {
+.hero-card__info__img-container {
   border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-  background-color: brown;
+  width: 11rem;
+  height: 11rem;
+  /* background-color: brown; */
   overflow: hidden;
+  position: relative;
+  top: -1rem;
+  left: -1.2rem;
+  box-shadow: 10px 10px 8px -7px rgba(0, 0, 0, 0.35);
+}
+
+.hero-card__info__img-container img {
+  width: 100%;
+  height: auto;
 }
 
 .hero-card__info__data {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-card__info__data__name {
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  position: relative;
+  top: -0.6rem;
+}
+
+.hero-card__info__data__description {
+  text-align: left;
+  font-size: 0.7rem;
+  color: gray;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.1rem;
+}
+
+.hero-card__info__data__btn {
+  color: white;
+  background-color: red;
+  width: 40%;
+  height: 2rem;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.64rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0 0;
+}
+
+.hero-card__comics {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.hero-card__comics h3 {
+  font-size: 1rem;
+  color: gray;
+  font-weight: 700;
+  margin-right: auto;
+  color: gray;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero-card__comics__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hero-card__comics__list li {
+  font-size: 0.7rem;
+  margin: 0.5rem 0 0.5rem 0;
+  /* justify-self: flex-start; */
+  text-align: start;
+  color: gray;
+  font-family: "Roboto", sans-serif;
 }

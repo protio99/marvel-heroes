@@ -1,0 +1,6 @@
+.home__characters {
+  width: 60vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(235, 234, 234);
+}
