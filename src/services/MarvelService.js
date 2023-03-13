@@ -16,7 +16,7 @@ let params = {
 };
 
 export class MarvelService {
-  GetCharacters(currentPage) {
+  GetCharacters(currentPage, orderBy) {
     const offset = currentPage * 10 - 10;
     return axios.get(`${baseEndPoint}${charactersEndpoint}`, {
       params: {
@@ -25,6 +25,7 @@ export class MarvelService {
         hash: hash,
         limit: 10,
         offset,
+        orderBy: orderBy || "name",
       },
     });
   }

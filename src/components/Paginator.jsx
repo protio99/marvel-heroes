@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./paginator.css";
 
 export default function Paginator({
@@ -6,22 +6,40 @@ export default function Paginator({
   charactersPerPage,
   setPage,
 }) {
-  const pages = [];
+  const [pages, setPages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  for (let page = 1; page <= totalCharacters / charactersPerPage; page++) {
-    pages.push(page);
-  }
+  useEffect(() => {
+    const pages = [];
+    for (let page = 1; page <= totalCharacters / charactersPerPage; page++) {
+      pages.push(page);
+    }
+    setPages(pages);
+  }, []);
 
   function pageClick(page, event) {
     console.log("page", page, "event", event);
-    setPage(page);
+    setCurrentPage(page);
   }
+
+  useEffect(() => {
+    setPage(currentPage);
+  }, [currentPage]);
+
   return (
     <div>
       <ul className="paginator">
         {pages.map((page) => {
           return (
-            <li key={page} onClick={(event) => pageClick(page, event)}>
+            <li
+              key={page}
+              className={
+                currentPage === page
+                  ? "paginator__number--selected"
+                  : "paginator__number"
+              }
+              onClick={(event) => pageClick(page, event)}
+            >
               {page}
             </li>
           );
