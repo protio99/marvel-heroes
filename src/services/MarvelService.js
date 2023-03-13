@@ -16,9 +16,16 @@ let params = {
 };
 
 export class MarvelService {
-  GetCharacters() {
+  GetCharacters(currentPage) {
+    const offset = currentPage * 10 - 10;
     return axios.get(`${baseEndPoint}${charactersEndpoint}`, {
-      params,
+      params: {
+        ts: timeStamp,
+        apikey: publicKey,
+        hash: hash,
+        limit: 10,
+        offset,
+      },
     });
   }
 

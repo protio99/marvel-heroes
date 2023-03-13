@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   // _marvelService.GetComicsByCharacterId("1010870");
   return (
     <BrowserRouter>
+      <Navbar />
       <Link to="/"></Link>
       <Link to="/"></Link>
       <Routes>

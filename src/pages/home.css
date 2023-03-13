@@ -1,6 +1,35 @@
+.home {
+  width: 70vw;
+  padding: 0 2rem 0 2rem;
+}
+.home__head {
+  display: flex;
+  flex-direction: row;
+  height: 6rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home__head__tittle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home__head__tittle img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home__head__tittle h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3e3534;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1rem;
+}
 .home__characters {
-  width: 60vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: rgb(235, 234, 234);
+  gap: 2rem;
 }
