@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./heroCard.css";
 
 export default function HeroCard({ character }) {
@@ -20,7 +21,9 @@ export default function HeroCard({ character }) {
           <p className="hero-card__data__summary__description">
             {getFirstElements(200, character.description)}..
           </p>
-          <button className="hero-card__data__summary__btn">View more</button>
+          <Link to={`/character/${character.id}`}>
+            <button className="hero-card__data__summary__btn">View more</button>
+          </Link>
         </div>
       </div>
       <div className="hero-card__comics">

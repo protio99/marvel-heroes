@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import "./App.css";
+import HeroDetail from "./pages/HeroDetail";
 
 function App() {
   // const [characters, setCharacters] = useState([]);
@@ -25,7 +26,7 @@ function App() {
       <Link to="/"></Link>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/character/:id" />
+        <Route path="/character/:id" element={<HeroDetail />} />
       </Routes>
     </BrowserRouter>
     // <div className="App">

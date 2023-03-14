@@ -41,4 +41,10 @@ export class MarvelService {
       params,
     });
   }
+
+  GetComicInfo(comicURL) {
+    return axios.get(`${comicURL}`, {
+      params,
+    });
+  }
 }
