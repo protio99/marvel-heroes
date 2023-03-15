@@ -1,0 +1,7 @@
+.modalVisible {
+  background-color: aquamarine;
+}
+
+.modalHide {
+  display: none;
+}

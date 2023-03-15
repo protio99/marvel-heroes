@@ -31,9 +31,11 @@ export class MarvelService {
   }
 
   GetCharacter(id) {
-    return axios.get(`${baseEndPoint}${charactersEndpoint}/${id}`, {
-      params,
-    });
+    return axios
+      .get(`${baseEndPoint}${charactersEndpoint}/${id}`, {
+        params,
+      })
+      .then((response) => response.data.data);
   }
   //1010870
   GetComicsByCharacterId(id) {
@@ -43,8 +45,10 @@ export class MarvelService {
   }
 
   GetComicInfo(comicURL) {
-    return axios.get(`${comicURL}`, {
-      params,
-    });
+    return axios
+      .get(`${comicURL}`, {
+        params,
+      })
+      .then((response) => response.data.data);
   }
 }
