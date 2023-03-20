@@ -16,7 +16,9 @@ export default function HeroDetail() {
   const [relatedComicsCompleteData, setRelatedComicsCompleteData] = useState(
     []
   );
-  const [selectedComic, setSelectedComic] = useState({});
+  const [selectedComic, setSelectedComic] = useState({
+    thumbnail: { path: "" },
+  });
   const [modalHide, setModalHide] = useState(true);
 
   async function getHeroInfo(heroId) {
@@ -52,32 +54,38 @@ export default function HeroDetail() {
     <div className="hero">
       <div className="hero__detail">
         <div className="hero__detail__data">
-          <div>
+          <img src={`${heroData.thumbnail.path}/portrait_incredible.jpg`}></img>
+          <div className="hero__detail_data__summary">
             <h4>{heroData.name}</h4>
-
-            <img
-              src={`${heroData.thumbnail.path}/portrait_incredible.jpg`}
-            ></img>
-
             <p>{heroData.description}</p>
           </div>
         </div>
         <div className="hero__detail__comics">
           {relatedComicsCompleteData.map((comic, index) => {
             return (
-              <div key={comic.id} onClick={() => comicOnClick(index)}>
-                <h4>{comic.title}</h4>
+              <div
+                key={comic.id}
+                onClick={() => comicOnClick(index)}
+                className="hero__detail__comics__comic"
+              >
+                <h4 className="hero__detail__comics__comic__tittle">
+                  {comic.title}
+                </h4>
                 <img
                   src={`${comic.thumbnail.path}/portrait_incredible.jpg`}
+                  className="hero__detail__comics__comic__img"
                 ></img>
-                <p>{comic.description}</p>
               </div>
             );
           })}
         </div>
       </div>
-      <div className="hero__comic-related">
-        <ComicModal data={selectedComic} modalHide={modalHide} />
+      <div
+        className={
+          modalHide ? "hero__comic-related" : "hero__comic-related--show"
+        }
+      >
+        <ComicModal data={selectedComic} setModalHide={setModalHide} />
       </div>
     </div>
   );
