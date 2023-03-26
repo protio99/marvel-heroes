@@ -23,7 +23,6 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Link to="/"></Link>
-      <Link to="/"></Link>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/character/:id" element={<HeroDetail />} />

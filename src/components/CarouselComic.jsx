@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./carouselComic.css";
 
 export default function CarouselComic({ comicsData }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -11,17 +12,8 @@ export default function CarouselComic({ comicsData }) {
       },
     },
   ]);
-  console.log("ffsfdfsdfdssdf", comics);
-  //   const [currentComic, setCurrentComic] = useState({
-  //     id: "",
-  //     title: "",
-  //     thumbnail: {
-  //         path: ""
-  //     }
-  //   });
 
   useEffect(() => {
-    console.log("fsdfsffffffffffffffffffff", comicsData);
     setComics(comicsData);
   }, [comicsData]);
 
@@ -33,32 +25,27 @@ export default function CarouselComic({ comicsData }) {
     setCurrentSlide(currentSlide + 1 === comics.length ? 0 : currentSlide + 1);
   };
   return (
-    <div>
-      <div
-        key={comics[currentSlide].id}
-        //   onClick={() => comicOnClick(index)}
-        className="hero__detail__comics__comic"
-      >
-        <h4 className="hero__detail__comics__comic__tittle">
-          {comics[currentSlide].title}
-        </h4>
-        <img
-          src={`${comics[currentSlide].thumbnail.path}/portrait_incredible.jpg`}
-          className="hero__detail__comics__comic__img"
-        ></img>
-      </div>
+    <div className="carousel">
       <button
         className="carousel__button carousel__button--prev"
         onClick={handlePrevClick}
+      ></button>
+      <div
+        key={comics[currentSlide].id}
+        //   onClick={() => comicOnClick(index)}
+        className="carousel__comic"
       >
-        Prev
-      </button>
+        <h4 className="carousel__comic__title">{comics[currentSlide].title}</h4>
+        <img
+          src={`${comics[currentSlide].thumbnail.path}/portrait_incredible.jpg`}
+          className="carousel__comic__img"
+        ></img>
+      </div>
+
       <button
         className="carousel__button carousel__button--next"
         onClick={handleNextClick}
-      >
-        Next
-      </button>
+      ></button>
     </div>
   );
 }

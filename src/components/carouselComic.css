@@ -1,0 +1,81 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ebebeb;
+  padding: 1rem 0 0 0;
+}
+
+.carousel__button {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border-style: none;
+  transition: linear 0.5s;
+}
+.carousel__button:hover {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.carousel__button--prev::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border-top: 1.5px solid #c4c3c3;
+  border-left: 1.5px solid #c4c3c3;
+  transform: rotate(-45deg);
+  display: block;
+  position: relative;
+  left: 9px;
+}
+
+.carousel__button--next::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border-top: 1.5px solid #c4c3c3;
+  border-right: 1.5px solid #c4c3c3;
+  transform: rotate(45deg);
+  display: block;
+  position: relative;
+  left: 6px;
+}
+
+.carousel__comic {
+  position: relative;
+}
+.carousel__comic__img {
+  width: 17rem;
+  transition: all 1.5s ease;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.carousel__comic:hover .carousel__comic__img {
+  transform: rotateY(180deg);
+  opacity: 0.3;
+  transition: all 1s ease;
+}
+
+.carousel__comic:hover > .carousel__comic__title {
+  transform: rotateY(0);
+  transition: all 1s ease;
+  opacity: 1;
+}
+
+.carousel__comic__title {
+  transform: rotateY(180deg);
+  transition: all 1s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-weight: 900;
+}
