@@ -25,17 +25,23 @@
   width: 60%;
 }
 .hero__detail__comics {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   gap: 1rem;
   width: 50vw;
-  justify-items: center;
+  justify-items: center; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .hero__detail__comics__comic {
   position: relative;
   width: 216px;
+}
+.hero__detail__comics__comic__img {
+  width: 17rem;
 }
 .hero__detail__comics__comic:hover .hero__detail__comics__comic__img {
   transform: rotateY(180deg);

@@ -2,18 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./comicModal.css";
 
 export default function ComicModal({ data, setModalHide }) {
-  console.log("data por fuera del useEffect", data);
-
   const [comicData, setComicData] = useState({
     thumbnail: { path: "" },
   });
   // const [modalHideComic, setModalHideComic] = useState(modalHide);
-  console.log("modal data", comicData);
+
   useEffect(() => {
     if (!data) {
       return;
     }
-    console.log("data dentro del useEffect", data);
+
     setComicData(data);
   }, [data]);
 

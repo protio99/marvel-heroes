@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { MarvelService } from "../services/MarvelService";
 import ComicModal from "../components/ComicModal";
 import "./heroDetail.css";
+import CarouselComic from "../components/CarouselComic";
 const _marvelService = new MarvelService();
 
 export default function HeroDetail() {
@@ -21,14 +22,19 @@ export default function HeroDetail() {
   });
   const [modalHide, setModalHide] = useState(true);
 
+  useEffect(() => {
+    getHeroInfo(id);
+  }, [id]);
+
+  useEffect(() => {
+    getComicInfo(relatedComics);
+  }, [relatedComics]);
+
   async function getHeroInfo(heroId) {
     const response = await _marvelService.GetCharacter(heroId);
     setHeroData(response.results[0]);
     setRelatedComics(response.results[0].comics.items);
   }
-  useEffect(() => {
-    getHeroInfo(id);
-  }, [id]);
 
   async function getComicInfo(comicsArray) {
     const comicsData = [];
@@ -40,15 +46,15 @@ export default function HeroDetail() {
     setRelatedComicsCompleteData(comicsData);
   }
 
-  useEffect(() => {
-    getComicInfo(relatedComics);
-  }, [relatedComics]);
-
-  function comicOnClick(index) {
-    const comicData = relatedComicsCompleteData[index];
-    setSelectedComic(comicData);
-    setModalHide(false);
-  }
+  // function comicOnClick(index) {
+  //   const comicData = relatedComicsCompleteData[index];
+  //   setSelectedComic(comicData);
+  //   setModalHide(false);
+  // }
+  // function carousel(index) {
+  //   const comic = relatedComicsCompleteData[index];
+  //   return <CarouselComic comicData={comic} />;
+  // }
 
   return (
     <div className="hero">
@@ -61,7 +67,7 @@ export default function HeroDetail() {
           </div>
         </div>
         <div className="hero__detail__comics">
-          {relatedComicsCompleteData.map((comic, index) => {
+          {/* {relatedComicsCompleteData.map((comic, index) => {
             return (
               <div
                 key={comic.id}
@@ -77,7 +83,12 @@ export default function HeroDetail() {
                 ></img>
               </div>
             );
-          })}
+          })} */}
+          {relatedComicsCompleteData.length !== 0 ? (
+            <CarouselComic comicsData={relatedComicsCompleteData} />
+          ) : (
+            <p>No se encontraron datos</p>
+          )}
         </div>
       </div>
       <div
