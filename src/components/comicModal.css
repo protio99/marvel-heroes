@@ -14,9 +14,9 @@
   height: 27rem;
   position: fixed;
   top: 5rem;
-  /* left: 50%; */
   transform: translateX(50%);
   background-color: #fff;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .comic-modal__content {
@@ -92,10 +92,9 @@
   /* align-items: flex-end; */
 }
 
-.comic-modal__btns__add {
+.comic-modal__btns__btn {
   display: flex;
   flex-direction: row;
-  background-color: #f0f0f0;
   border-style: none;
   width: 50%;
   height: 3rem;
@@ -103,20 +102,35 @@
   align-items: center;
   text-transform: uppercase;
   font-weight: 800;
+  transition: all ease 0.4s 0.4s;
+}
+
+.comic-modal__btns__add {
+  background-color: #f0f0f0;
+}
+
+.comic-modal__btns__add:hover {
+  transition: all ease 0.4s 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .comic-modal__btns__buy {
-  display: flex;
-  flex-direction: row;
   background-color: #dcdcdc;
-  border-style: none;
-  width: 50%;
-  height: 3rem;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
   color: #ec1d23;
-  font-weight: 800;
+}
+
+.comic-modal__btns__buy:hover {
+  transition: all ease 0.4s 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.comic-modal__btns__added {
+  background-color: #322827;
+  color: #ec1d23;
 }
 
 .comic-modal__btns--icon {
