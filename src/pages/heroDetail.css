@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* margin: auto; */
   height: 87vh;
   overflow: hidden;
 }
@@ -27,6 +26,26 @@
 .hero__detail_data__summary {
   width: 60%;
 }
+.hero__detail_data__summary h4 {
+  text-transform: uppercase;
+  color: #3d3331;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+}
+.hero__detail_data__summary p {
+  color: #3d3331;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.05rem;
+  font-weight: 300;
+  text-align: left;
+  font-size: 0.8rem;
+  color: gray;
+  line-height: 1.1rem;
+}
+
 .hero__detail__comics {
   /* display: grid;
   grid-template-columns: 1fr 1fr;
@@ -40,7 +59,7 @@
   width: 50vw;
 }
 
-.hero__comic-related {
+.hero__comic-related--close {
   display: none;
 }
 .hero__comic-related--show {

@@ -1,7 +1,125 @@
-.modalVisible {
-  background-color: aquamarine;
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 22;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
 }
 
-.modalHide {
-  display: none;
+.comic-modal {
+  width: 40rem;
+  height: 27rem;
+  position: fixed;
+  top: 5rem;
+  /* left: 50%; */
+  transform: translateX(50%);
+  background-color: #fff;
+}
+
+.comic-modal__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.comic-modal__content__text {
+  width: 60%;
+}
+
+.comic-modal__content__text--title {
+  text-transform: uppercase;
+  color: #3d3331;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+}
+
+.comic-modal__content__text--description {
+  color: #3d3331;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.05rem;
+  font-weight: 300;
+  text-align: left;
+  font-size: 0.8rem;
+  color: gray;
+  line-height: 1.1rem;
+  /* height: 7.5rem; */
+}
+
+.comic-modal__content__close-btn {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background-color: #2d2627;
+  border-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 1%;
+}
+
+.comic-modal__content__close-btn::before {
+  content: "";
+  width: 0.3rem;
+  height: 0.3rem;
+  border-top: white 3px solid;
+  border-left: white 3px solid;
+  display: block;
+  transform: rotate(135deg);
+}
+.comic-modal__content__close-btn::after {
+  content: "";
+  width: 0.3rem;
+  height: 0.3rem;
+  border-top: white 3px solid;
+  border-left: white 3px solid;
+  display: block;
+  transform: rotate(-45deg);
+}
+
+.comic-modal__btns {
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-end; */
+}
+
+.comic-modal__btns__add {
+  display: flex;
+  flex-direction: row;
+  background-color: #f0f0f0;
+  border-style: none;
+  width: 50%;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.comic-modal__btns__buy {
+  display: flex;
+  flex-direction: row;
+  background-color: #dcdcdc;
+  border-style: none;
+  width: 50%;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #ec1d23;
+  font-weight: 800;
+}
+
+.comic-modal__btns--icon {
+  width: 1.5rem;
+  margin: 0 0.1rem;
 }

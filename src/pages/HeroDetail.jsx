@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MarvelService } from "../services/MarvelService";
-import ComicModal from "../components/ComicModal";
-import "./heroDetail.css";
 import CarouselComic from "../components/CarouselComic";
+import "./heroDetail.css";
 const _marvelService = new MarvelService();
 
 export default function HeroDetail() {
@@ -20,8 +19,6 @@ export default function HeroDetail() {
   const [selectedComic, setSelectedComic] = useState({
     thumbnail: { path: "" },
   });
-  const [modalHide, setModalHide] = useState(true);
-
   useEffect(() => {
     getHeroInfo(id);
   }, [id]);
@@ -45,16 +42,6 @@ export default function HeroDetail() {
     }
     setRelatedComicsCompleteData(comicsData);
   }
-
-  // function comicOnClick(index) {
-  //   const comicData = relatedComicsCompleteData[index];
-  //   setSelectedComic(comicData);
-  //   setModalHide(false);
-  // }
-  // function carousel(index) {
-  //   const comic = relatedComicsCompleteData[index];
-  //   return <CarouselComic comicData={comic} />;
-  // }
 
   return (
     <div className="hero">
@@ -90,13 +77,6 @@ export default function HeroDetail() {
             <p>No se encontraron datos</p>
           )}
         </div>
-      </div>
-      <div
-        className={
-          modalHide ? "hero__comic-related" : "hero__comic-related--show"
-        }
-      >
-        <ComicModal data={selectedComic} setModalHide={setModalHide} />
       </div>
     </div>
   );
