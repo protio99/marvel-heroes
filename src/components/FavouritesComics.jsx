@@ -10,8 +10,11 @@ export default function FavouritesComics() {
     setFavouritesComics(comicsArray);
   }, []);
 
-  const deleteFavourite = (index) => {
-    const updatedFavourites = favouritesComics.slice(index - 1, index);
+  const deleteFavourite = (id) => {
+    const updatedFavourites = favouritesComics.filter(
+      (comic) => id != comic.id
+    );
+    setFavouritesComics(updatedFavourites);
     localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   };
 
@@ -25,9 +28,9 @@ export default function FavouritesComics() {
         <p className="favourites__header__title">My favourites</p>
       </div>
       <div className="favourites__content">
-        {favouritesComics.map((comic, index) => {
+        {favouritesComics.map((comic) => {
           return (
-            <div className="favourites__content__comic">
+            <div className="favourites__content__comic" key={comic.id}>
               <img
                 className="favourites__content__img"
                 src={`${comic.thumbnail.path}/portrait_incredible.jpg`}
@@ -36,7 +39,7 @@ export default function FavouritesComics() {
               <img
                 src="/assets/icons/btn-delete.png"
                 className="favourites__content__icon"
-                onClick={() => deleteFavourite(index)}
+                onClick={() => deleteFavourite(comic.id)}
               ></img>
             </div>
           );

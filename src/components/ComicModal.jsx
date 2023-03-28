@@ -8,46 +8,30 @@ export default function ComicModal({ data, setModalHide }) {
   });
 
   useEffect(() => {
-    const storageFavourites = JSON.parse(localStorage.getItem("favourites"));
     if (!data) {
       return;
     }
     setComicData(data);
 
-    if (!storageFavourites) {
-      localStorage.setItem("favourites", JSON.stringify([]));
-    } else {
-      const validationAdded = storageFavourites.filter(
-        (comic) => comic.id === comicData.id
-      );
-      console.log("------------", validationAdded);
-
-      if (validationAdded.length !== 0) {
-        setValidationComicAdded(true);
-      }
-    }
-  }, [data]);
-  useEffect(() => {
     const storageFavourites = JSON.parse(localStorage.getItem("favourites"));
     if (!storageFavourites) {
-      localStorage.setItem("favourites", JSON.stringify([]));
-    } else {
-      const validationAdded = storageFavourites.filter(
-        (comic) => comic.id === comicData.id
-      );
-      console.log("------------", validationAdded);
-
-      if (validationAdded.length !== 0) {
-        setValidationComicAdded(true);
-      }
+      return;
     }
-  }, [comicData]);
+
+    const validationAdded = storageFavourites.some(
+      (comic) => comic.id === data.id
+    );
+    setValidationComicAdded(validationAdded);
+  }, [data]);
 
   const addToFavourites = () => {
-    setValidationComicAdded(true);
-    const storageFavourites = JSON.parse(localStorage.getItem("favourites"));
+    let storageFavourites = JSON.parse(localStorage.getItem("favourites"));
+    if (!storageFavourites) {
+      storageFavourites = [];
+    }
     storageFavourites.push(comicData);
     localStorage.setItem("favourites", JSON.stringify(storageFavourites));
+    setValidationComicAdded(true);
   };
 
   return (
