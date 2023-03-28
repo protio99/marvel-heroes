@@ -33,6 +33,7 @@
   display: block;
   position: relative;
   left: 9px;
+  cursor: pointer;
 }
 
 .carousel__button--next::before {
@@ -45,10 +46,12 @@
   display: block;
   position: relative;
   left: 6px;
+  cursor: pointer;
 }
 
 .carousel__comic {
   position: relative;
+  cursor: pointer;
 }
 .carousel__comic__img {
   width: 17rem;

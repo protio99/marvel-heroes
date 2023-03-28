@@ -1,3 +1,7 @@
+.home-main {
+  display: flex;
+  flex-direction: row;
+}
 .home {
   width: 70vw;
   padding: 0 2rem 0 2rem;
@@ -5,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f4f4f4;
 }
 .home__head {
   display: flex;
@@ -35,7 +40,7 @@
 .home__characters {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: rgb(235, 234, 234);
+  background-color: #f4f4f4;
   gap: 2rem;
 }
 
